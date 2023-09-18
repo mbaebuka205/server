@@ -1,6 +1,7 @@
-import { error } from "console"
+import { error, log } from "console"
 import fs from "fs"
 import path from "path"
+import { CLIENT_RENEG_LIMIT } from "tls"
 
 
 fs.mkdir("./NewClass", (error):void=>{
@@ -212,3 +213,14 @@ fs.readFile(path.join(__dirname, "NewClass" , "NewFile.txt"),
         
     }
 })
+
+fs.readFile(path.join(__dirname, "events", "firstfile"), "utf-8", (error, data):void=>{
+    if(error){
+        console.log(error);
+        
+    }else{
+        console.log(data);
+        
+    }
+})
+
